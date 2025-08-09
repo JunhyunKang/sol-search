@@ -1,6 +1,8 @@
 # SOL SEARCH - 은행앱의 자연어 검색 도구
 > **"검색으로 하는 뱅킹"** - 복잡한 메뉴 탐색 없이 강력한 검색으로 간편하게 은행 업무를 처리하세요
 
+> **[FE레포지토리](https://github.com/JunhyunKang/mock-sol)**
+
 
 ## ✨ 주요 특징
 
@@ -144,6 +146,12 @@ graph TD
 - Node.js 18+
 - Python 3.9+
 - Google Gemini API Key
+
+### **FE, BE 설치**
+```bash
+git clone https://github.com/JunhyunKang/mock-sol.git
+git clone https://github.com/JunhyunKang/sol-search.git
+```
 
 ### **pnpm 설치**
 ```bash
