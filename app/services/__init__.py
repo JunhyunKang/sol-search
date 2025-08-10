@@ -14,6 +14,7 @@ _nlp_service = None
 _search_service = None
 _banking_service = None
 _user_service = None
+_personalized_service = None
 
 def get_gemini_nlp_service() -> GeminiNLPService:
     """NLP 서비스 싱글톤 인스턴스 반환"""
@@ -41,13 +42,19 @@ def get_user_service() -> UserService:
 #         _banking_service = BankingService()
 #     return _banking_service
 
+from .personalized_service import PersonalizedService
+
+def get_personalized_service() -> PersonalizedService:
+    global _personalized_service
+    if _personalized_service is None:
+        _personalized_service = PersonalizedService()
+    return _personalized_service
+
 __all__ = [
-    "GeminiNLPService",
     "SearchService",
     "UserService",
-    # "BankingService",
-    "get_gemini_nlp_service",
+    "PersonalizedService",  # 추가됨
     "get_search_service",
     "get_user_service",
-    # "get_banking_service"
+    "get_personalized_service",  # 추가됨
 ]

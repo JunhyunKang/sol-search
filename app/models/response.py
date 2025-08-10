@@ -34,6 +34,25 @@ class SearchResponse(BaseModel):
             }
         }
 
+class PersonalizedExplanationResponse(BaseModel):
+    """맞춤형 설명 응답 모델"""
+    success: bool = True
+    explanation: str
+    key_points: List[str]
+    recommendations: List[str]
+    user_context: Dict[str, Any]
+
+    class Config:
+        schema_extra = {
+            "example": {
+                "success": True,
+                "explanation": "준현님처럼 20대 회사원분들이 가장 많이 선택하는 카드예요! 현재 잔액 145만원 정도면 월 한도 100만원이 딱 적당해요.",
+                "key_points": ["연회비 무료", "카페/편의점 할인", "월 한도 100만원"],
+                "recommendations": ["일상 사용에 적합", "첫 카드로 추천"],
+                "user_context": {"age_group": "20대", "job_category": "직장인"}
+            }
+        }
+
 
 class ErrorResponse(BaseModel):
     """에러 응답 모델"""
